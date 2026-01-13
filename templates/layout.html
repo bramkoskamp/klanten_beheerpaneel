@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <header class="w-60">
+            <nav class="w-60 h-screen bg-white border-r border-gray-200 shadow-xl flex flex-col justify-between p-6">
+                <!-- Top section -->
+                <div class="flex flex-col space-y-4">
+                    <h1 class="text-2xl font-bold text-[#930628] mb-6 text-center"><a href="/">Admin Panel</a></h1>
+
+                    <a href="/new_invoice" class="text-[#930628] font-medium text-base hover:bg-[#930628] hover:text-white transition-all rounded-lg px-4 py-2 text-center shadow-sm">
+                        + Maak Factuur
+                    </a>
+                    <a href="/new_quote" class="text-[#930628] font-medium text-base hover:bg-[#930628] hover:text-white transition-all rounded-lg px-4 py-2 text-center shadow-sm">
+                        + Maak Offerte
+                    </a>
+                    <a href="/services" class="text-[#930628] font-medium text-base hover:bg-[#930628] hover:text-white transition-all rounded-lg px-4 py-2 text-center shadow-sm">
+                        Diensten
+                    </a>
+                </div>
+
+                <!-- Bottom section -->
+                <div class="flex flex-col space-y-2">
+                    <hr class="border-gray-300 my-2">
+                    <a href="#" class="text-gray-500 text-sm hover:text-[#930628] transition text-center">Instellingen</a>
+                    <a href="#" class="text-gray-500 text-sm hover:text-[#930628] transition text-center">Uitloggen</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main content -->
+        <main class="flex-1 p-8">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+</body>
+</html>

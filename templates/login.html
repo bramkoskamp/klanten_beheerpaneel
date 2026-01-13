@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="mx-auto w-96 mt-10 p-6 bg-white rounded-lg shadow-md">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="mb-4">
+            {% for category, message in messages %}
+                {% if category == 'success' %}
+                <div class="p-3 mb-2 text-green-800 bg-green-100 rounded-md border border-green-300">
+                    {{ message }}
+                </div>
+                {% elif category == 'error' %}
+                <div class="p-3 mb-2 text-red-800 bg-red-100 rounded-md border border-red-300">
+                    {{ message }}
+                </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST" novalidate class="flex flex-col space-y-5">
+        {{ form.hidden_tag() }}
+
+        <div class="flex flex-col space-y-1">
+            {{ form.username.label(class="text-sm font-medium text-gray-700") }}
+            {{ form.username(class="px-3 py-2 rounded-md border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-blue-500") }}
+
+            {% for error in form.username.errors %}
+                <p class="text-red-500 text-sm">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="px-6 py-2 bg-[#03424C] text-white rounded-md shadow hover:bg-[#022933] transition-colors">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

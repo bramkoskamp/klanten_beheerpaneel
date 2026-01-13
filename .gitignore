@@ -1,0 +1,22 @@
+# Environment files
+.env
+
+# Backup folder
+backups/
+
+# Data folder
+data/
+
+# Build / distribution folders
+dist/
+build/
+
+# Python cache
+__pycache__/
+
+# Poetry lock file
+poetry.lock
+
+# PyInstaller spec files
+launcher.spec
+start_app.spec

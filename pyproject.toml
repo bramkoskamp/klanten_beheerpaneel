@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "python-sql"
+version = "0.1.0"
+description = ""
+author = ["Bram koskamp"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+postgresqlite = "^0.4.8"
+pgcli = "^4.1.0"
+flask = "^3.1.2"
+flask-sqlalchemy = "^3.1.1"
+flask-wtf = "^1.2.1"
+email-validator = "^2.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "flask-sqlalchemy-stubs (>=0.2,<0.3)",
+    "sqlalchemy-stubs (>=0.4,<0.5)",
+    "types-flask (>=1.1.6,<2.0.0)"
+]
